@@ -1,1 +1,0 @@
-# Strrationalism.github.io
