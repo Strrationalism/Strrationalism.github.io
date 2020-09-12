@@ -2,7 +2,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>标题需要设置！</title>
 	
 	<link rel="icon" href="/img/logo-small.png" type="image/x-icon" />
     	<link rel="shortcut icon" href="/img/logo-small.png" type="image/x-icon" />
@@ -45,7 +44,11 @@ else {
 	window.location.href = "/";
 }
 
-document.getElementById("m").setAttribute("src",url);
+var m = document.getElementById("m")
+m.setAttribute("src",url);
+m.onload = function () {
+	document.title = contentWindow.document.title;
+}
 
 </script>
 
