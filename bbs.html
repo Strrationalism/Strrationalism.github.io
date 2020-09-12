@@ -25,7 +25,8 @@ function getQueryVariable(variable)
 var post = getQueryVariable("p");
 var page = getQueryVariable("page");
 var floor = getQueryVariable("f");
-
+var m = document.getElementById("m")
+	
 var url = "http://111.73.45.249/office/bbs/";
 if(floor != null) {
 	url += "view_floor/"
@@ -34,6 +35,8 @@ if(floor != null) {
 	
 	var c = "http://111.73.45.249/office/bbs/floor_title_script/" + floor;
 	document.write("<script src='" + c + "'><\/script>");
+	
+	window.location.href = url;
 }
 else if(post != null) {
 	if(page == null) page = "0";
@@ -45,13 +48,14 @@ else if(post != null) {
 	
 	var c = "http://111.73.45.249/office/bbs/post_title_script/" + post;
 	document.write("<script src='" + c + "'><\/script>");
+	
+	m.setAttribute("src",url);
 }
 else {
 	window.location.href = "/";
 }
 
-var m = document.getElementById("m")
-m.setAttribute("src",url);
+
 
 </script>
 
