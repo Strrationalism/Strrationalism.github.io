@@ -36,7 +36,7 @@ if(floor != null) {
 	var c = "http://111.73.45.249/office/bbs/floor_title_script/" + floor;
 	document.write("<script src='" + c + "'><\/script>");
 	
-	window.location.href = url;
+	m.setAttribute("src",url);
 }
 else if(post != null) {
 	if(page == null) page = "0";
