@@ -21,6 +21,7 @@ function getQueryVariable(variable)
 }
 
 var post = getQueryVariable("p");
+var page = getQueryVariable("page");
 var floor = getQueryVariable("f");
 
 var url = "http://111.73.45.249/office/bbs/";
@@ -29,9 +30,11 @@ if(floor != null) {
 	url += floor;
 }
 else if(post != null) {
+	if(page == null) page = "0";
 	url += "post/";
 	url += post;
-	url += "/0";
+	url += "/";
+	url += page;
 }
 else {
 	alert("Error");
