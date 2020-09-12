@@ -30,7 +30,10 @@ var url = "http://111.73.45.249/office/bbs/";
 if(floor != null) {
 	url += "view_floor/"
 	url += floor;
-	url += "/real"
+	url += "/real";
+	
+	var c = "http://111.73.45.249/office/bbs/floor_title_script/" + floor;
+	document.write("<script src='" + c + "'><\/script>");
 }
 else if(post != null) {
 	if(page == null) page = "0";
@@ -39,6 +42,9 @@ else if(post != null) {
 	url += "/";
 	url += page;
 	url += "/real";
+	
+	var c = "http://111.73.45.249/office/bbs/post_title_script/" + post;
+	document.write("<script src='" + c + "'><\/script>");
 }
 else {
 	window.location.href = "/";
@@ -46,9 +52,6 @@ else {
 
 var m = document.getElementById("m")
 m.setAttribute("src",url);
-m.onload = function () {
-	document.title = m.contentWindow.document.title;
-}
 
 </script>
 
