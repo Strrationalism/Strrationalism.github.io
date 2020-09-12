@@ -28,6 +28,7 @@ var url = "http://111.73.45.249/office/bbs/";
 if(floor != null) {
 	url += "view_floor/"
 	url += floor;
+	url += "/real"
 }
 else if(post != null) {
 	if(page == null) page = "0";
@@ -35,11 +36,10 @@ else if(post != null) {
 	url += post;
 	url += "/";
 	url += page;
+	url += "/real";
 }
 else {
-	alert("Error");
-	alert(post);
-	alert(floor);
+	window.location.href = "/";
 }
 
 document.getElementById("m").setAttribute("src",url);
