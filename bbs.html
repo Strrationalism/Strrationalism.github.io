@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>标题需要设置！</title>
+
+<script type="text/javascript">
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+var post = getQueryVariable("p");
+var floor = getQueryVariable("f");
+
+var url = "http://111.73.45.249/office/bbs/";
+if(floor != false) {
+	url += "view_floor/"
+	url += floor;
+}
+else if(post != false) {
+	url += "post/";
+	url += post;
+	url += "/0";
+}
+else {
+	alert("Error");
+}
+
+document.getElementById("m").setAttribute("src",url);
+
+</script>
+
+</head>
+
+<frameset framespacing="0" border="0" rows="0" frameborder="0"> 
+<frame id="m" name="main" scrolling="auto" noresize> 
+</frameset> 
+
+</html>
