@@ -47,7 +47,7 @@ else {
 var m = document.getElementById("m")
 m.setAttribute("src",url);
 m.onload = function () {
-	document.title = contentWindow.document.title;
+	document.title = m.contentWindow.document.title;
 }
 
 </script>
