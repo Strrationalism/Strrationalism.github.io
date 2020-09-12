@@ -11,18 +11,18 @@ function getQueryVariable(variable)
                var pair = vars[i].split("=");
                if(pair[0] == variable){return pair[1];}
        }
-       return(false);
+       return null;
 }
 
 var post = getQueryVariable("p");
 var floor = getQueryVariable("f");
 
 var url = "http://111.73.45.249/office/bbs/";
-if(floor != false) {
+if(floor != null) {
 	url += "view_floor/"
 	url += floor;
 }
-else if(post != false) {
+else if(post != null) {
 	url += "post/";
 	url += post;
 	url += "/0";
