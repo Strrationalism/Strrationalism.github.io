@@ -8,7 +8,9 @@
 </head>
 
 <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<!--
 <iframe width="100%" height="100%" seamless="seamless" frameborder="0" id="m" style="margin:0px;padding:0px;"></iframe>
+-->
 
 <script type="text/javascript">
 function getQueryVariable(variable)
@@ -31,12 +33,8 @@ var url = "http://111.73.45.249/office/bbs/";
 if(floor != null) {
 	url += "view_floor/"
 	url += floor;
-	url += "/real";
 	
-	var c = "http://111.73.45.249/office/bbs/floor_title_script/" + floor;
-	document.write("<script charset='utf-8' src='" + c + "'><\/script>");
-	
-	m.setAttribute("src",url);
+	window.location.href = url;
 }
 else if(post != null) {
 	if(page == null) page = "0";
@@ -44,12 +42,9 @@ else if(post != null) {
 	url += post;
 	url += "/";
 	url += page;
-	url += "/real";
 	
-	var c = "http://111.73.45.249/office/bbs/post_title_script/" + post;
-	document.write("<script charset='utf-8' src='" + c + "'><\/script>");
-	
-	m.setAttribute("src",url);
+
+	window.location.href = url;
 }
 else {
 	window.location.href = "/";
